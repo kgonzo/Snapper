@@ -1,0 +1,3 @@
+# ignore pycache
+**/scripts/__pycache__
+#ignore training summaries
