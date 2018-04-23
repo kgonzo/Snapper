@@ -1,6 +1,10 @@
 package application.controller;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import application.Main;
 import application.model.ScriptRunner;
@@ -46,8 +50,8 @@ public class MainController implements EventHandler<ActionEvent> {
 			int length = pathname.length();
 			int length2 = resultName.length();
 			String newpath = pathname.substring(0, length - length2);
-			newpath = newpath +"/SnapperUI/Snapper/"+resultName;
-			
+			newpath = newpath +resultName;
+			//System.out.println(pathname);
 			String line = null;
 			try {
 				FileReader fileReader = new FileReader(newpath);
