@@ -35,7 +35,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event) {
 		String choose = "Choose Photo";
-		String command = "python3 foo.py";
+		String command = "python3 run.py";
 		String run = "Run";
 		Button b = (Button)event.getSource();
 		if(run.equals(b.getText())) {
@@ -53,10 +53,12 @@ public class MainController implements EventHandler<ActionEvent> {
 			newpath = newpath +resultName;
 			//System.out.println(pathname);
 			String line = null;
+			
 			try {
 				FileReader fileReader = new FileReader(newpath);
 				BufferedReader bufferedReader =  new BufferedReader(fileReader);
 				int flag = 0;
+				
 				while(true) {
 					
 				while((line = bufferedReader.readLine()) != null) {
@@ -81,6 +83,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			FileChooser fc = new FileChooser();
 			File file = fc.showOpenDialog(Main.getStage());
 			filename = file.getName();
+			command = command + " " + filename;
 			try {
 				this.selectedImage = new Image(file.toURI().toURL().toExternalForm());
 				this.image.setImage(selectedImage);
