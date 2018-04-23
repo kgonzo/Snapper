@@ -13,7 +13,11 @@ public class ScriptRunner {
 	public void callPythonScript() {
 		try {
 			Process process = Runtime.getRuntime().exec(this.executable);
+			process.waitFor();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

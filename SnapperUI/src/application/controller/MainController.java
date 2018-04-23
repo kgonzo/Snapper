@@ -27,6 +27,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	private ImageView image;
 	private Image selectedImage;
 	private String filename;
+	private String command = "python3 run.py";
 	
 	public MainController() {
 		super();
@@ -35,14 +36,23 @@ public class MainController implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event) {
 		String choose = "Choose Photo";
-		String command = "python3 run.py";
 		String run = "Run";
 		Button b = (Button)event.getSource();
+		System.out.println("Make the file");
+		
+		File out = new File("result.out");
+		try {
+			out.createNewFile();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		if(run.equals(b.getText())) {
+			this.output.setText("Running...");
+			System.out.println("DEBUG"+command);
 			ScriptRunner runner = new ScriptRunner(command);
 			runner.callPythonScript();
-			this.output.setText("Running...");
-			
 			String resultName = "result.out";
 			File result = new File("result.out");
 			///home/jason/eclipse-workspace/SnapperUI.zip_expanded/SnapperUI/Snapper
@@ -59,15 +69,10 @@ public class MainController implements EventHandler<ActionEvent> {
 				BufferedReader bufferedReader =  new BufferedReader(fileReader);
 				int flag = 0;
 				
-				while(true) {
-					
-				while((line = bufferedReader.readLine()) != null) {
-					flag = 1;
-	                this.output.setText(line);
-	            }   
-					if(flag == 1)
-						break;
-				}
+				
+				line = bufferedReader.readLine();
+	            this.output.setText(line);  
+			
 			} catch (FileNotFoundException e) {
 				
 				e.printStackTrace();
@@ -82,8 +87,9 @@ public class MainController implements EventHandler<ActionEvent> {
 		else if(choose.equals(b.getText())){
 			FileChooser fc = new FileChooser();
 			File file = fc.showOpenDialog(Main.getStage());
-			filename = file.getName();
+			this.filename = file.getName();
 			command = command + " " + filename;
+			System.out.println(command);
 			try {
 				this.selectedImage = new Image(file.toURI().toURL().toExternalForm());
 				this.image.setImage(selectedImage);
@@ -91,7 +97,6 @@ public class MainController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 			this.picturename.setText(filename);
-			
 			
 		}
 	
