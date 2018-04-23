@@ -1,3 +1,8 @@
 # ignore pycache
-**/scripts/__pycache__
-#ignore training summaries
+__pycache__/
+# ignore training summaries
+training_summaries/
+# ignore other files
+*.pb
+*.empty
+*DS_Store
