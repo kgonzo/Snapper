@@ -27,7 +27,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	private ImageView image;
 	private Image selectedImage;
 	private String filename;
-	private String command = "python3 run.py";
+	private String command = "python2 run.py";
 	private String javaCom = "java -version";
 	
 	public MainController() {
