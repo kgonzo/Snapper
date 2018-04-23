@@ -28,6 +28,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	private Image selectedImage;
 	private String filename;
 	private String command = "python3 run.py";
+	private String javaCom = "java -version";
 	
 	public MainController() {
 		super();
@@ -50,7 +51,6 @@ public class MainController implements EventHandler<ActionEvent> {
 		
 		if(run.equals(b.getText())) {
 			this.output.setText("Running...");
-			System.out.println("DEBUG"+command);
 			ScriptRunner runner = new ScriptRunner(command);
 			runner.callPythonScript();
 			String resultName = "result.out";
