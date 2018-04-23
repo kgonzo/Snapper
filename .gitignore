@@ -6,3 +6,4 @@ training_summaries/
 *.pb
 *.empty
 *DS_Store
+*.out

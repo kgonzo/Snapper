@@ -2,6 +2,9 @@ import subprocess
 import sys
 import re
 
+# Open a text file to print to
+outFile = open("result.out", "w+")
+
 # Set image size
 imgSize = "224"
 
@@ -43,3 +46,6 @@ prediction = prediction[0] + " " + prediction[1]
 
 # Print the prediction
 print(prediction)
+
+outFile.write(prediction)
+outFile.close()
