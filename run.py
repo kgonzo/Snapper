@@ -12,6 +12,7 @@ imgSize = "224"
 arch = "mobilenet_0.50_" + imgSize
 
 # Retrain the model on MobileNet
+'''
 retrain = "python -m scripts.retrain \
   	--bottleneck_dir=tf_files/bottlenecks \
   	--how_many_training_steps=500 \
@@ -23,7 +24,7 @@ retrain = "python -m scripts.retrain \
   	--image_dir=tf_files/fish_photos"
 process = subprocess.Popen(retrain.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
-
+'''
 # Take test picture form user
 userInput = sys.argv[1]
 
