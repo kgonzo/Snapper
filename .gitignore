@@ -3,7 +3,6 @@ __pycache__/
 # ignore training summaries
 training_summaries/
 # ignore other files
-*.pb
 *.empty
 *DS_Store
 *.out
