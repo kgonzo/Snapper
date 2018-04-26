@@ -1,15 +1,16 @@
-Species:Rainbow Trout
+Species: Rainbow Trout
 Daily_Bag:5 In any combination of Rainbow and Brown
-Size_Limit:NONE
+Size_Limit: NONE
 
-Species:Alligator Gar
+Species: Alligator Gar
 Daily_Bag: 1
-Size_Limit:NONE
+Size_Limit: NONE
 
-Species:Largemouth Bass
-Daily_Bag:5 in any combination of Largemouth, Smallmouth, Spotted, Guadalupe, and Alabama
-Size_Limit:minimum 14 inches
+Species: Largemouth Bass
+Daily_Bag: 5 in any combination of Largemouth, Smallmouth, Spotted, Guadalupe, and Alabama
+Size_Limit: Minimum 14 inches
 
-Species:Spotted Bass
-Daily_Bag:5 in any combination of Largemouth, Smallmouth, Spotted, Guadalupe, and Alabama
-Size_Limit:NONE
+Species: Spotted Bass
+Daily_Bag: 5 in any combination of Largemouth, Smallmouth, Spotted, Guadalupe, and Alabama
+Size_Limit: NONE
+

@@ -59,7 +59,3 @@ while True:
         break
 
 
-
-
-outFile.write(prediction)
-outFile.close()
