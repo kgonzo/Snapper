@@ -1,9 +1,15 @@
 import subprocess
 import sys
-import re
+from PIL import Image
 
-# Open a text file to print to
-outFile = open("result.out", "w+")
+# Ensure that a test image is provided
+if len(sys.argv) != 2:
+    print('usage: python3 run.py /path/to/test_image')
+    exit()
+
+# Display prediction choice
+img = Image.open(sys.argv[1])
+img.show()
 
 # Set image size
 imgSize = "224"
@@ -57,5 +63,3 @@ while True:
             print(line)
 
         break
-
-
