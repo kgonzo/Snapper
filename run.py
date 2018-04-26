@@ -45,8 +45,21 @@ prediction = predictions[3]
 prediction = prediction.split()
 prediction = prediction[0] + " " + prediction[1]
 
-# Print the prediction
-print(prediction)
+# Print regulation information
+file = open("fishdata.txt", "r")
+while True:
+    line = file.readline()
+    if prediction in line.lower():
+        print(line)
+        for i in range(0,3):
+            line = file.readline()
+            line = line.replace("_", " ")
+            print(line)
+
+        break
+
+
+
 
 outFile.write(prediction)
 outFile.close()
