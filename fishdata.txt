@@ -1,5 +1,5 @@
 Species: Rainbow Trout
-Daily_Bag:5 In any combination of Rainbow and Brown
+Daily_Bag: 5 In any combination of Rainbow and Brown
 Size_Limit: NONE
 
 Species: Alligator Gar
